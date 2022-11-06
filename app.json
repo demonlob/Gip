@@ -48,6 +48,10 @@
       "description": "A space separated list of user_ids which should be considered support users (can gban/ungban, nothing else)",
       "value": "254318997 18673980 83489514"
     },
+    "DATABASE_URL": {
+      "description": "Optional: link where you would like to receive donations.",
+      "value": "postgres://ywoweaqu:***@lucky.db.elephantsql.com/ywoweaqu"
+    },
     "WHITELIST_USERS": {
       "description": "A space separated list of user_ids which should be considered whitelisted - they can't be banned.",
       "value": "254318997 18673980 83489514"
