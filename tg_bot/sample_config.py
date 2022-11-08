@@ -1,11 +1,22 @@
-if not __name__.endswith("sample_config"):
-    import sys
-    print("The README is there to be read. Extend this sample config to a config file, don't just rename and change "
-          "values here. Doing that WILL backfire on you.\nBot quitting.", file=sys.stderr)
-    quit(1)
+import os
+from os import getenv
+
+"""
+from dotenv import load_dotenv
+
+if os.path.exists("local.env"):
+    load_dotenv("local.env")
+"""
+
+import json
 
 
-# Create a new config.py file in same dir and import, then extend this class.
+
+def get_user_list(config, key):
+    with open("{}/tg_bot/{}".format(os.getcwd(), config), "r") as json_file:
+        return json.load(json_file)[key]
+
+
 class Config(object):
     LOGGER = True
 
@@ -15,7 +26,7 @@ class Config(object):
     OWNER_USERNAME = "YOUR USERNAME HERE"
 
     # RECOMMENDED
-    SQLALCHEMY_DATABASE_URI = 'sqldbtype://username:pw@hostname:port/db_name'  # needed for any database modules
+    DATABASE_URL = ''  # needed for any database modules
     MESSAGE_DUMP = None  # needed to make sure 'save from' messages persist
     LOAD = []
     NO_LOAD = ['translation', 'rss']
