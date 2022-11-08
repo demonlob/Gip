@@ -2,7 +2,7 @@ from sqlalchemy import create_engine
 from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy.orm import sessionmaker, scoped_session
 
-from tg_bot import DB_URL as DB_URI, LOGGER as log
+from tg_bot import DB_URI, LOGGER as log
 
 
 if DB_URI and DB_URI.startswith("postgres://"):
