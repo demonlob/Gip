@@ -64,11 +64,11 @@ RUN apt update && apt upgrade -y && \
 RUN pip3 install --upgrade pip setuptools
 
 # Copy Python Requirements to /root/FallenRobot
-RUN git clone https://github.com/AnonymousX1025/FallenRobot /root/FallenRobot
-WORKDIR /root/FallenRobot
+RUN git clone Noobxcoders/got /root/tg_bot
+WORKDIR /root/tg_bot
 
 #Copy config file to /root/FallenRobot/FallenRobot
-COPY ./FallenRobot/config.py ./FallenRobot/config.py* /root/FallenRobot/FallenRobot/
+COPY ./tg_bot/config.py ./tg_bot/config.py* /root/FallenRobot/tg_bot/
 
 ENV PATH="/home/bot/bin:$PATH"
 
@@ -76,4 +76,4 @@ ENV PATH="/home/bot/bin:$PATH"
 RUN pip3 install -U -r requirements.txt
 
 # Starting Worker
-CMD ["python3","-m","FallenRobot"]
+CMD ["python3","-m","tg_bot"]
